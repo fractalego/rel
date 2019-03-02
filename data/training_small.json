@@ -1,9 +1,9 @@
 {
   "facts": [
-        "common(v2), most(v1), advmod(v2,v1), det(v2,v3), The(v3)"
+        "common(v2), most(v1), acomp(v3,v6), advmod(v2,v1), det(v2,v3), audits(v3), waste(v6), and(v1,v3)"
   ],
   "goals": [
-    "audits(v3), waste(v6), Message-Topic(v3,v6)"
+    "audits(vv1), waste(vv2), Message-Topic(vv1,vv2)"
   ],
   "relations": [
     "acomp",
@@ -71,6 +71,6 @@
   ],
   "non_trainable_rules": [],
   "trainable_rules": [
-    "MATCH *(a), *(a,d), *(d) CREATE *(a2), *(a2,d3), *(d3) DELETE a, d, a-d"
+    "MATCH *(a), *(a,d), *(d) DELETE a-d CREATE (a), #Message-Topic(a,d), (d)"
   ]
 }
