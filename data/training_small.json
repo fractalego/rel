@@ -71,6 +71,9 @@
   ],
   "non_trainable_rules": [],
   "trainable_rules": [
-    "MATCH *(a), *(a,d), *(d) DELETE a-d CREATE (a), #Message-Topic(a,d), (d)"
+    "MATCH *(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) CREATE (a0), #Message-Topic(a0,a3), (a3)"
+    //// Generate this type of rules automatically!
+    
+//    "MATCH *(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) CREATE (a0), #Message-Topic(a0,a3), (a3)"  ## DOES NOT WORK WITH audits, waste
   ]
 }
