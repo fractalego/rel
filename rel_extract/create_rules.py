@@ -13,7 +13,8 @@ relations = [
     "Entity-Destination",
     "Component-Whole",
     "Member-Collection",
-    "Message-Topic"
+    "Message-Topic",
+    "entity"
 ]
 
 rules = [

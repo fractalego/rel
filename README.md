@@ -7,3 +7,8 @@
 If data < rules:
     ### Why does it not predict with all the rules?
     ### It probably means there are a few competing outputs. Use them all ?
+
+if cannot train:
+    ### MORE RULES ARE NEEDED, LOOK AT DATA 3
+
+    ### Is shift in range of 10 enough?
