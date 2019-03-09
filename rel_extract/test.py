@@ -30,7 +30,7 @@ def test(dgt, predictions, goals):
             true_positives += 1
 
     print('Precision:', true_positives / total)
-    print('Recall:', false_negatives / total)
+    #print('Recall:', false_negatives + true_positives / total)
 
 
 if __name__ == '__main__':
