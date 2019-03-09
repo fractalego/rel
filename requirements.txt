@@ -1,0 +1,4 @@
+nltk
+spacy==2.0.18
+parvusdb==0.0.22
+dgt
