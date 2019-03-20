@@ -1,11 +1,27 @@
 {
   "facts": [
     "common(v2), most(v1), audits(v3), The(v0), were(v4), about(v5), .(v9), waste(v6), and(v7), recycling(v8), advmod(v2,v1), det(v3,v0), amod(v3,v2), nsubj(v4,v3), prep(v4,v5), punct(v4,v9), pobj(v5,v6), cc(v6,v7), conj(v6,v8)",
-    "company(v1), The(v0), fabricates(v2), chairs(v4), .(v5), plastic(v3), det(v1,v0), nsubj(v2,v1), dobj(v2,v4), punct(v2,v5), entity(v4,v3)"
+    "company(v1), The(v0), fabricates(v2), chairs(v4), .(v5), plastic(v3), det(v1,v0), nsubj(v2,v1), dobj(v2,v4), punct(v2,v5), entity(v4,v3)",
+    "master(v2), The(v0), school(v1), teaches(v3), lesson(v5), with(v6), .(v9), the(v4), stick(v8), a(v7), det(v2,v0), entity(v2,v1), nsubj(v3,v2), dobj(v3,v5), prep(v3,v6), punct(v3,v9), det(v5,v4), pobj(v6,v8), det(v8,v7)",
+    "suspect(v1), The(v0), dumped(v2), body(v5), into(v6), .(v10), the(v3), dead(v4), reservoir(v9), a(v7), local(v8), det(v1,v0), nsubj(v2,v1), dobj(v2,v5), prep(v2,v6), punct(v2,v10), det(v5,v3), amod(v5,v4), pobj(v6,v9), det(v9,v7), amod(v9,v8)",
+    "influenza(v1), Avian(v0), is(v2), disease(v5), .(v17), an(v3), infectious(v4), of(v6), birds(v7), caused(v8), by(v9), strains(v12), A(v11), type(v10), of(v13), virus(v16), the(v14), influenza(v15), amod(v1,v0), nsubj(v2,v1), attr(v2,v5), punct(v2,v17), det(v5,v3), amod(v5,v4), prep(v5,v6), pobj(v6,v7), entity(v7,v8), agent(v8,v9), pobj(v9,v12), entity(v11,v10), det(v12,v11), prep(v12,v13), pobj(v13,v16), det(v16,v14), entity(v16,v15)",
+    "ear(v1), The(v0), of(v2), elephant(v5), the(v3), African(v4), is(v6), larger(v8), --(v9), measuring(v10), .(v20), significantly(v7), cm(v12), by(v13), 183(v11), cm(v15), 114(v14), in(v16), elephant(v19), the(v17), bush(v18), det(v1,v0), prep(v1,v2), pobj(v2,v5), det(v5,v3), amod(v5,v4), nsubj(v6,v1), acomp(v6,v8), punct(v6,v9), advcl(v6,v10), punct(v6,v20), advmod(v8,v7), dobj(v10,v12), prep(v10,v13), entity(v12,v11), pobj(v13,v15), entity(v15,v14), prep(v15,v16), pobj(v16,v19), det(v19,v17), entity(v19,v18)",
+    "child(v1), A(v0), told(v3), is(v2), lie(v5), for(v6), by(v9), before(v12), /(v14), a(v4), years(v8), several(v7), parents(v11), their(v10), he(v13), realizes(v16), she(v15), exist(v23), .(v24), Claus(v20), a(v18), Santa(v19), that(v17), does(v21), not(v22), det(v1,v0), nsubjpass(v3,v1), auxpass(v3,v2), dobj(v3,v5), prep(v3,v6), agent(v3,v9), prep(v3,v12), punct(v3,v14), det(v5,v4), pobj(v6,v8), amod(v8,v7), pobj(v9,v11), poss(v11,v10), pobj(v12,v13), nsubj(v16,v15), ccomp(v16,v23), punct(v16,v24), det(v20,v18), entity(v20,v19), mark(v23,v17), nsubj(v23,v20), aux(v23,v21), neg(v23,v22)",
+    "Skype(v0), ,(v1), software(v4), ,(v5), a(v2), free(v3), allows(v6), join(v14), .(v25), hookup(v8), a(v7), of(v9), users(v12), multiple(v10), computer(v11), to(v13), in(v15), without(v20), call(v19), an(v16), online(v17), conference(v18), incurring(v21), costs(v24), any(v22), telephone(v23), punct(v0,v1), appos(v0,v4), punct(v0,v5), det(v4,v2), amod(v4,v3), nsubj(v6,v0), ccomp(v6,v14), punct(v6,v25), det(v8,v7), prep(v8,v9), pobj(v9,v12), amod(v12,v10), entity(v12,v11), nsubj(v14,v8), aux(v14,v13), prep(v14,v15), prep(v14,v20), pobj(v15,v19), det(v19,v16), amod(v19,v17), entity(v19,v18), pcomp(v20,v21), dobj(v21,v24), det(v24,v22), entity(v24,v23)",
+    "scene(v2), The(v0), disgusting(v1), was(v3), retaliation(v4), .(v20), against(v5), brother(v7), her(v6), Philip(v8), rents(v10), who(v9), room(v12), the(v11), inside(v13), house(v16), this(v14), apartment(v15), on(v17), street(v19), Lombard(v18), det(v2,v0), amod(v2,v1), nsubj(v3,v2), attr(v3,v4), punct(v3,v20), prep(v4,v5), pobj(v5,v7), poss(v7,v6), appos(v7,v8), entity(v7,v10), nsubj(v10,v9), dobj(v10,v12), det(v12,v11), prep(v12,v13), pobj(v13,v16), det(v16,v14), entity(v16,v15), prep(v16,v17), pobj(v17,v19), entity(v19,v18)",
+    "thesis(v1), This(v0), defines(v2), characteristics(v5), .(v9), the(v3), clinical(v4), of(v6), disease(v8), amyloid(v7), det(v1,v0), nsubj(v2,v1), dobj(v2,v5), punct(v2,v9), det(v5,v3), amod(v5,v4), prep(v5,v6), pobj(v6,v8), entity(v8,v7)"
   ],
   "goals": [
     "audits(v3), waste(v6), Message-Topic(v3,v6)",
-    "company(v1), chairs(v4), Product-Producer(v1,v4)"
+    "company(v1), chairs(v4), Product-Producer(v1,v4)",
+    "master(v2), stick(v8), Instrument-Agency(v2,v8)",
+    "body(v5), reservoir(v9), Entity-Destination(v5,v9)",
+    "influenza(v1), virus(v16), Cause-Effect(v1,v16)",
+    "ear(v1), elephant(v5), Component-Whole(v1,v5)",
+    "lie(v5), parents(v11), Product-Producer(v5,v11)",
+    "hookup(v8), users(v12), Member-Collection(v8,v12)",
+    "room(v12), house(v16), Component-Whole(v12,v16)",
+    "thesis(v1), characteristics(v5), Message-Topic(v1,v5)"
   ],
   "relations": [
     "acomp",
@@ -72,7 +88,18 @@
     "entity"
   ],
   "non_trainable_rules": [
-    "MATCH company>0.6(a0), fabricates>0.6(a1), chairs>0.6(a2), nsubj>0.6924317(a1,a0), dobj>0.69307965(a1,a2) CREATE entity(a0), entity(a2), Product-Producer(a0,a2) RETURN __RESULT__ ",
-    "MATCH audits>0.6(a0), were>0.6(a1), about>0.6(a2), waste>0.6(a3), nsubj>0.6929351(a1,a0), prep>0.6935349(a1,a2), pobj>0.69257855(a2,a3) CREATE entity(a0), entity(a3), Message-Topic(a0,a3) RETURN __RESULT__ "
+    "MATCH room>0.5406375(a0), inside>0.5405438(a1), house>0.5406623(a2), the>0.5405814(a4), prep>0.5458106(a0,a1), pobj>0.5452354(a1,a2), det>0.5457722(a0,a4) CREATE entity(a0), entity(a2), Component-Whole(a0,a2) RETURN __RESULT__ ",
+    "MATCH audits>0.54048187(a0), were>0.5405598(a1), about>0.5406851(a2), waste>0.5405313(a3), common>0.5404812(a4), nsubj>0.54350203(a1,a0), prep>0.5436028(a1,a2), pobj>0.544251(a2,a3), amod>0.54479825(a0,a4) CREATE entity(a0), entity(a3), Message-Topic(a0,a3) RETURN __RESULT__ ",
+    "MATCH company>0.54032737(a0), fabricates>0.5402993(a1), chairs>0.54033643(a2), .>0.5401577(a4), nsubj>0.54412997(a1,a0), dobj>0.5439547(a1,a2), punct>0.5442541(a1,a4) CREATE entity(a0), entity(a2), Product-Producer(a0,a2) RETURN __RESULT__ ",
+    "MATCH hookup>0.5406726(a0), of>0.5405356(a1), users>0.54065347(a2), multiple>0.5405959(a4), prep>0.5449319(a0,a1), pobj>0.5443366(a1,a2), amod>0.544031(a2,a4) CREATE entity(a0), entity(a2), Member-Collection(a0,a2) RETURN __RESULT__ ",
+    "MATCH of>0.540572(a0), users>0.54054046(a1), multiple>0.5406337(a2), computer>0.5406301(a4), pobj>0.5443223(a0,a1), amod>0.5446702(a1,a2), entity>0.5447705(a1,a4) CREATE entity(a0), entity(a2), Member-Collection(a0,a2) RETURN __RESULT__ ",
+    "MATCH hookup>0.54065347(a0), of>0.5406134(a1), users>0.5406025(a2), a>0.5405804(a4), prep>0.5450975(a0,a1), pobj>0.54401225(a1,a2), det>0.54493535(a0,a4) CREATE entity(a0), entity(a2), Member-Collection(a0,a2) RETURN __RESULT__ ",
+    "MATCH audits>0.54047936(a0), were>0.5405596(a1), about>0.5404244(a2), waste>0.5402016(a3), .>0.54041445(a4), nsubj>0.54369575(a1,a0), prep>0.5435671(a1,a2), pobj>0.54392314(a2,a3), punct>0.5433629(a1,a4) CREATE entity(a0), entity(a3), Message-Topic(a0,a3) RETURN __RESULT__ ",
+    "MATCH of>0.5404797(a0), elephant>0.5405026(a1), the>0.54034764(a2), African>0.54050875(a4), pobj>0.54521394(a0,a1), det>0.5434269(a1,a2), amod>0.54488546(a1,a4) CREATE entity(a0), entity(a2), Component-Whole(a0,a2) RETURN __RESULT__ ",
+    "MATCH company>0.54027545(a0), fabricates>0.5403125(a1), chairs>0.54029167(a2), plastic>0.5403417(a4), nsubj>0.5437057(a1,a0), dobj>0.5428281(a1,a2), entity>0.54587436(a2,a4) CREATE entity(a0), entity(a2), Product-Producer(a0,a2) RETURN __RESULT__ ",
+    "MATCH thesis>0.54033774(a0), defines>0.54024655(a1), characteristics>0.5403012(a2), the>0.5402623(a4), nsubj>0.54388237(a1,a0), dobj>0.5445819(a1,a2), det>0.5443291(a2,a4) CREATE entity(a0), entity(a2), Message-Topic(a0,a2) RETURN __RESULT__ ",
+    "MATCH body>0.5405473(a0), dumped>0.5405286(a1), into>0.54054236(a2), reservoir>0.5405656(a3), a>0.5406186(a4), dobj>0.5449966(a1,a0), prep>0.54429865(a1,a2), pobj>0.5456856(a2,a3), det>0.5448819(a3,a4) CREATE entity(a0), entity(a3), Entity-Destination(a0,a3) RETURN __RESULT__ ",
+    "MATCH reservoir>0.5404659(a0), into>0.54049754(a1), dumped>0.5404802(a2), a>0.54056877(a4), pobj>0.5439305(a1,a0), prep>0.5443201(a2,a1), det>0.5458829(a0,a4) CREATE entity(a0), entity(a2), Entity-Destination(a0,a2) RETURN __RESULT__ ",
+    "MATCH master>0.54053324(a0), teaches>0.54042625(a1), with>0.54041636(a2), stick>0.5404495(a3), a>0.5404736(a4), nsubj>0.5440731(a1,a0), prep>0.54525113(a1,a2), pobj>0.54474545(a2,a3), det>0.544982(a3,a4) CREATE entity(a0), entity(a3), Instrument-Agency(a0,a3) RETURN __RESULT__ "
   ]
 }

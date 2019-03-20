@@ -29,8 +29,7 @@ def test(dgt, predictions, goals):
         if is_match:
             true_positives += 1
 
-    print('Precision:', true_positives / total)
-    #print('Recall:', false_negatives + true_positives / total)
+    print('Recall:', true_positives / total)
 
 
 if __name__ == '__main__':
