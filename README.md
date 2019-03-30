@@ -27,8 +27,16 @@ Training
       two rules with 20% recall.
       I suspect the other facts are not learned from because there is no correct hypothesis
 
-    * * dgt.fit(epochs=20, step=1e-2, relaxation_epochs=200, relaxation_step=1e-2)
+    * dgt.fit(epochs=20, step=1e-2, relaxation_epochs=200, relaxation_step=1e-2)
       10 facts
-      two rules with 40% recall.
+      40% recall.
       I had previously added a "x *(v), *(v, a4), *(a4)"
       There was a problem with the length of _max_items_size
+
+    * dgt.fit(epochs=10, step=1e-2, relaxation_epochs=200, relaxation_step=1e-2)
+      10 facts
+      13 rules with 40% recall.
+      Very slow, I suspect _max_items_size of 30 is the culprit (Maybe you can play with this to speed it up)
+
+
+     #### TRY TO USE TORCH BOTTLENECK!!
