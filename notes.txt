@@ -1,0 +1,5 @@
+1) The execution time is proportional to the number of rules. Make rules parallel at model.py level
+2) You should execute train_a_single_path() one epoch at a time, so that you can stop when the best index matches
+
+The problem here is that the paths and rules are being trained at the same time. There is no way to save
+the original vectors and start from there
