@@ -69,5 +69,7 @@
     "is",
     "entity"
   ],
-  "non_trainable_rules": []
+  "non_trainable_rules": [
+    "MATCH audits>0.7(a0), waste>0.7(a1), conj>0.9(a0,a1) CREATE entity(a0), entity(a1), Message-Topic(a0,a1) RETURN __RESULT__ "
+  ]
 }
