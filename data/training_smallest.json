@@ -1,6 +1,6 @@
 {
   "facts": [
-    "common(v2), most(v1), audits(v3), The(v0), were(v4), about(v5), .(v9), waste(v6), and(v7), recycling(v8), advmod(v2,v1), det(v3,v0), amod(v3,v2), nsubj(v4,v3), prep(v4,v5), punct(v4,v9), pobj(v5,v6), cc(v6,v7), conj(v3,v6)"
+    "common(v2), most(v1), audits(v3), The(v0), were(v4), about(v5), .(v9), waste(v6), and(v7), recycling(v8), advmod(v2,v1), det(v3,v0), amod(v3,v2), nsubj(v4,v3), prep(v4,v5), punct(v4,v9), pobj(v5,v6), cc(v6,v7)"
   ],
   "goals": [
         "audits(v3), waste(v6), Message-Topic(v3,v6)"
@@ -71,6 +71,6 @@
   ],
   "non_trainable_rules": [],
   "trainable_rules": [
-    "MATCH *(a0), #conj(a0,a1), *(a1) CREATE (a0), #Message-Topic(a0,a1), (a1)"
+    "MATCH *(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3)  CREATE (a0), #Message-Topic(a0,a3), (a3)"
   ]
 }

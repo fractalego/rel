@@ -17,5 +17,5 @@ set_global_device('cpu')
 
 if __name__ == '__main__':
     dgt = DGT(_metric, json.load(open(_gradient_test_filename)))
-    dgt.fit(epochs=50, step=1e-3, relaxation_epochs=0, relaxation_step=1e-2)
+    dgt.fit(epochs=50, step=1e-2, relaxation_epochs=0, relaxation_step=1e-2)
     dgt.save(open(os.path.join(_path, '../data/saved.json'), 'w'))
