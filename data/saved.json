@@ -70,6 +70,6 @@
     "entity"
   ],
   "non_trainable_rules": [
-    "MATCH Ai-NET>0.7(a0), NothingI>0.7(a1), CIO>0.7(a2), Peakbagger.com>0.7(a3), num>0.9(a1,a0), pobj>0.9(a1,a2), acomp>0.9(a2,a3) CREATE entity(a0), entity(a3), Message-Topic(a0,a3) RETURN __RESULT__ "
+    "MATCH audits>0.52077574(a0), were>0.521068(a1), about>0.5210483(a2), waste>0.52091855(a3), nsubj>0.6258654(a1,a0), prep>0.62772787(a1,a2), pobj>0.62502474(a2,a3) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.9(a0,a3) RETURN __RESULT__ "
   ]
 }
