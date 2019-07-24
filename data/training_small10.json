@@ -71,18 +71,18 @@
   ],
   "non_trainable_rules": [],
   "trainable_rules": [
-    "MATCH *(a0), *(a1,a0), *(a1), *(a2,a1), *(a2) , *(a0, a4), *(a4) CREATE (a0), #Message-Topic(a0,a2), (a2)",
-    "MATCH *(a0), *(a1,a0), *(a1), *(a2,a1), *(a2) , *(a1, a4), *(a4) CREATE (a0), #Message-Topic(a0,a2), (a2)",
-    "MATCH *(a0), *(a1,a0), *(a1), *(a2,a1), *(a2) , *(a2, a4), *(a4) CREATE (a0), #Message-Topic(a0,a2), (a2)",
-    "MATCH *(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3)  CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) , *(a0, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) , *(a1, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) , *(a2, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) , *(a3, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3)  CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) , *(a0, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) , *(a1, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) , *(a2, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
-    "MATCH *(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), *(a3) , *(a3, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)"
+    "MATCH #audits(a0), *(a1,a0), *(a1), *(a2,a1), #waste(a2) , *(a0, a4), *(a4) CREATE (a0), #Message-Topic(a0,a2), (a2)",
+    "MATCH #audits(a0), *(a1,a0), *(a1), *(a2,a1), #waste(a2) , *(a1, a4), *(a4) CREATE (a0), #Message-Topic(a0,a2), (a2)",
+    "MATCH #audits(a0), *(a1,a0), *(a1), *(a2,a1), #waste(a2) , *(a2, a4), *(a4) CREATE (a0), #Message-Topic(a0,a2), (a2)",
+    "MATCH #audits(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3)  CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3) , *(a0, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3) , *(a1, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3) , *(a2, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a0,a1), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3) , *(a3, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3)  CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3) , *(a0, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3) , *(a1, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3) , *(a2, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)",
+    "MATCH #audits(a0), *(a1,a0), *(a1), *(a1,a2), *(a2), *(a2,a3), #waste(a3) , *(a3, a4), *(a4) CREATE (a0), #Message-Topic(a0,a3), (a3)"
   ]
 }

@@ -3,3 +3,19 @@
 
 The problem here is that the paths and rules are being trained at the same time. There is no way to save
 the original vectors and start from there. How do you save old copies of pytorch vectors?
+
+
+Time:
+* 1 goal/data graph, 1 rule (the right one): 30sec
+* 1 goal/data graph, 10 rules (with 4 right ones): ~20min
+* 1 goal/data graph, 10 rules (with 4 right ones), manual (#) pre-selection: 115sec
+
+
+Steps:
+1) create all the paths with all the rules (where * is an all-match)
+    * Are gradient rules matched on all the predicates as an all match?
+        * So it seems! Every gradient rule is automatically matched and inserted in the list!!
+        * Maybe you should do the matching instead.
+        * Maybe with some special condition about * predicates
+
+2) each rule can be applied in different ways
