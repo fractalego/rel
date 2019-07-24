@@ -35,6 +35,7 @@ class DGT:
             finished_paths, metric, relations_metric = train_all_paths(metric, relations_metric, self._k,
                                                                        end_graphs, goal, i,
                                                                        0.6, epochs, step)
+            
             if finished_paths:
                 ### HERE YOU MUST UPDATE THE METRIC AS WELL!!
                 #    train_all_paths(metric, relations_metric, self._k, finished_paths, goal, i,
@@ -76,13 +77,17 @@ class DGT:
         return to_return
 
     def save(self, filestream):
+        to_return = self.get_json_results()
+        json.dump(to_return, filestream, indent=2)
+
+    def get_json_results(self):
         writer = Writer(self._metric, self._relations_metric, print_thresholds=False)
         to_return = {'facts': [writer.write(item) for item in self._data],
                      'goals': [writer.write(item) for item in self._goals],
                      'relations': [word for word in self._relations_metric._model.index2word],
                      'non_trainable_rules': self._used_rules
                      }
-        json.dump(to_return, filestream, indent=2)
+        return to_return
 
     def print_all_rules(self):
         print_predicates(self._k)
