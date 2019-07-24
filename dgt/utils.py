@@ -490,3 +490,10 @@ def train_all_paths(old_metric, old_relations_metric, k, paths, goal, permutatio
         return finished_paths, old_metric, old_relations_metric
 
     return None
+
+
+def pre_select_paths(goal, paths):
+    for path in paths:
+        graph_list = create_graph_list(path[2], goal)
+        graph_list.reverse()
+        print(graph_list)

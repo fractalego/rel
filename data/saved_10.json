@@ -1,9 +1,9 @@
 {
   "facts": [
-    "common(v2), most(v1), audits(v3), The(v0), were(v4), about(v5), .(v9), waste(v6), and(v7), recycling(v8), advmod(v2,v1), det(v3,v0), amod(v3,v2), nsubj(v4,v3), prep(v4,v5), punct(v4,v9), pobj(v5,v6), cc(v6,v7), conj(v6,v8)"
+    "common>0.7(v2), most>0.7(v1), audits>0.7(v3), The>0.7(v0), were>0.7(v4), about>0.7(v5), .>0.7(v9), waste>0.7(v6), and>0.7(v7), recycling>0.7(v8), advmod>0.7(v2,v1), det>0.7(v3,v0), amod>0.7(v3,v2), nsubj>0.7(v4,v3), prep>0.7(v4,v5), punct>0.7(v4,v9), pobj>0.7(v5,v6), cc>0.7(v6,v7), conj>0.7(v6,v8)"
   ],
   "goals": [
-    "audits(v3), waste(v6), Message-Topic(v3,v6)"
+    "audits>0.7(v3), waste>0.7(v6), Message-Topic>0.7(v3,v6)"
   ],
   "relations": [
     "acomp",
@@ -70,9 +70,9 @@
     "entity"
   ],
   "non_trainable_rules": [
-    "MATCH audits>0.54997224(a0), were>0.5524535(a1), about>0.55004025(a2), waste>0.5499858(a3), common>0.55253625(a4), nsubj>0.5508826(a1,a0), prep>0.5509697(a1,a2), pobj>0.5507282(a2,a3), amod>0.5507266(a0,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
-    "MATCH audits>0.55305135(a0), were>0.5552173(a1), about>0.5551838(a2), waste>0.5550545(a3), .>0.55315757(a4), nsubj>0.5561728(a1,a0), prep>0.5560612(a1,a2), pobj>0.55596095(a2,a3), punct>0.5559782(a1,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
-    "MATCH audits>0.5474365(a0), were>0.5500375(a1), about>0.55001944(a2), waste>0.5474986(a3), nsubj>0.55107343(a1,a0), prep>0.55109036(a1,a2), pobj>0.5509278(a2,a3) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
-    "MATCH audits>0.56569576(a0), were>0.5668582(a1), about>0.5668816(a2), waste>0.565768(a3), and>0.5669019(a4), nsubj>0.5676724(a1,a0), prep>0.56772393(a1,a2), pobj>0.5676906(a2,a3), cc>0.56765455(a3,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ "
+    "MATCH audits>0.5530579(a0), were>0.555107(a1), about>0.55508906(a2), waste>0.55311584(a3), and>0.5551727(a4), nsubj>0.5558857(a1,a0), prep>0.5558826(a1,a2), pobj>0.55592686(a2,a3), cc>0.5561693(a3,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
+    "MATCH audits>0.5381555(a0), were>0.54129136(a1), about>0.54123074(a2), waste>0.5412249(a3), .>0.5382786(a4), nsubj>0.542163(a1,a0), prep>0.54241645(a1,a2), pobj>0.54217494(a2,a3), punct>0.54236126(a1,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
+    "MATCH audits>0.55289996(a0), were>0.55508643(a1), about>0.55504936(a2), waste>0.5529623(a3), nsubj>0.5561653(a1,a0), prep>0.5559675(a1,a2), pobj>0.55813795(a2,a3) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
+    "MATCH audits>0.55507714(a0), were>0.5573764(a1), about>0.5550579(a2), waste>0.55505985(a3), common>0.55745435(a4), nsubj>0.5557626(a1,a0), prep>0.55570614(a1,a2), pobj>0.5557656(a2,a3), amod>0.55567306(a0,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ "
   ]
 }

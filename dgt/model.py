@@ -4,7 +4,7 @@ import random
 from dgt.graph import GraphRule
 from dgt.inference import ForwardInference
 from dgt.utils import get_relations_embeddings_dict_from_json, get_data_goal_knowledge_from_json, train_all_paths, \
-    print_predicates, get_string_with_all_the_rules_with_weights, _max_items_size
+    print_predicates, get_string_with_all_the_rules_with_weights, pre_select_paths
 
 from rel_extract.writer import Writer
 
@@ -31,6 +31,7 @@ class DGT:
             end_graphs = fw.compute()
             metric.set_threshold(0.7)
             relations_metric.set_threshold(0.7)
+            pre_select_paths(goal, end_graphs)
 
             finished_paths, metric, relations_metric = train_all_paths(metric, relations_metric, self._k,
                                                                        end_graphs, goal, i,
@@ -81,7 +82,7 @@ class DGT:
         json.dump(to_return, filestream, indent=2)
 
     def get_json_results(self):
-        writer = Writer(self._metric, self._relations_metric, print_thresholds=False)
+        writer = Writer(self._metric, self._relations_metric, print_thresholds=True)
         to_return = {'facts': [writer.write(item) for item in self._data],
                      'goals': [writer.write(item) for item in self._goals],
                      'relations': [word for word in self._relations_metric._model.index2word],
