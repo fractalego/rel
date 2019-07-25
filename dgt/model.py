@@ -31,7 +31,7 @@ class DGT:
             end_graphs = fw.compute()
             metric.set_threshold(0.7)
             relations_metric.set_threshold(0.7)
-            pre_select_paths(goal, end_graphs)
+            metric, relations_metric = pre_select_paths(goal, end_graphs, metric, relations_metric)
 
             finished_paths, metric, relations_metric = train_all_paths(metric, relations_metric, self._k,
                                                                        end_graphs, goal, i,

@@ -474,9 +474,9 @@ def train_all_paths(old_metric, old_relations_metric, k, paths, goal, permutatio
                                              lr=step)
 
                 results = train_a_single_path(item, goal, metric, relations_metric,
-                                       MatchFactory(metric, relations_metric, match_index=match_index),
-                                       optimizer,
-                                       epochs, permutation_shift, clamp)
+                                              MatchFactory(metric, relations_metric, match_index=match_index),
+                                              optimizer,
+                                              epochs, permutation_shift, clamp)
 
                 if results:
                     finished_paths.append(item)
@@ -492,8 +492,30 @@ def train_all_paths(old_metric, old_relations_metric, k, paths, goal, permutatio
     return None
 
 
-def pre_select_paths(goal, paths):
+def pre_select_paths(goal, paths, metric, relations_metric):
+    match = Match(matching_code_container=DummyCodeContainer(),
+                  node_matcher=VectorNodeMatcher(metric, relations_metric, gradient=False),
+                  match_index=0)
+
     for path in paths:
         graph_list = create_graph_list(path[2], goal)
         graph_list.reverse()
-        print(graph_list)
+
+        substitutions = [[]]
+        goal_graph = create_graph_from_string(str(graph_list[0]))
+        last_consequence_graph = create_graph_from_string(str(graph_list[1]))
+        try:
+            substitutions = match.get_variables_substitution_dictionaries(last_consequence_graph, goal_graph)
+        except MatchException:
+            pass
+
+        for k, v in substitutions[0].items():
+            rules_metric_index = last_consequence_graph.vs.find(name=v)['vector']
+            goal_metric_index = goal_graph.vs.find(name=k)['vector']
+            print(metric.get_most_similar_string_from_index(rules_metric_index),
+                  metric.get_threshold_from_index(rules_metric_index))
+            print(metric.get_most_similar_string_from_index(goal_metric_index),
+                  metric.get_threshold_from_index(goal_metric_index))
+            metric.copy_index_to_index(goal_metric_index, rules_metric_index, gradient=True)
+
+    return metric, relations_metric

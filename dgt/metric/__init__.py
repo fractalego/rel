@@ -87,9 +87,9 @@ class GloveMetric(MetricBase):
 
     def indices_have_similar_vectors(self, lindex, rindex):
         _, rthreshold = self._vector_map[rindex]
-        #print(self.get_most_similar_string_from_vector(
+        # print(self.get_most_similar_string_from_vector(
         #    self.get_vector_from_index(lindex).cpu().detach().numpy()))
-        #print(self.get_most_similar_string_from_vector(
+        # print(self.get_most_similar_string_from_vector(
         #    self.get_vector_from_index(rindex).cpu().detach().numpy()))
         return self.indices_dot_product(lindex, rindex) > rthreshold
 
@@ -105,6 +105,10 @@ class GloveMetric(MetricBase):
     def get_indexed_thresholds(self):
         return [item[1] for item in list(self._vector_map.values())]
 
+    def get_most_similar_string_from_index(self, index):
+        vector = self.get_vector_from_index(index).cpu().detach().numpy()
+        return self._model.most_similar(positive=[vector])[0][0]
+
     def get_most_similar_string_from_vector(self, vector):
         return self._model.most_similar(positive=[vector])[0][0]
 
@@ -114,7 +118,12 @@ class GloveMetric(MetricBase):
         to_return._vector_map = copy.deepcopy(self._vector_map)
         return to_return
 
-    # Private
+    def copy_index_to_index(self, lindex, rindex, gradient):
+        lvector = self.get_vector_from_index(lindex)
+        lthreshold = self.get_threshold_from_index(lindex)
+        vector = torch.autograd.Variable(lvector, requires_grad=gradient)
+        threshold = torch.autograd.Variable(lthreshold, requires_grad=gradient)
+        self._vector_map[rindex] = (vector, threshold)
 
     def _get_vector(self, word):
         try:
