@@ -501,13 +501,12 @@ def pre_select_paths(goal, paths, metric, relations_metric):
         graph_list = create_graph_list(path[2], goal)
         graph_list.reverse()
 
-        substitutions = [[]]
         goal_graph = create_graph_from_string(str(graph_list[0]))
         last_consequence_graph = create_graph_from_string(str(graph_list[1]))
         try:
             substitutions = match.get_variables_substitution_dictionaries(last_consequence_graph, goal_graph)
         except MatchException:
-            pass
+            continue
 
         for k, v in substitutions[0].items():
             rules_metric_index = last_consequence_graph.vs.find(name=v)['vector']

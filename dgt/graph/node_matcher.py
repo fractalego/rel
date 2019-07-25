@@ -20,8 +20,8 @@ class VectorNodeMatcher(StringNodeMatcher):
         if key == 'text':
             return True
         if key == 'vector':
-            return self._metric.indices_have_similar_vectors(lhs, rhs)
+            return self._metric.indices_have_similar_vectors(rhs, lhs)
         if key == 'rvector':
-            return self._relation_metric.indices_have_similar_vectors(lhs, rhs)
+            return self._relation_metric.indices_have_similar_vectors(rhs, lhs)
 
         return StringNodeMatcher._match(self, key, lhs, rhs)

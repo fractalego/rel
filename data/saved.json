@@ -1,9 +1,9 @@
 {
   "facts": [
-    "common(v2), most(v1), audits(v3), The(v0), were(v4), about(v5), .(v9), waste(v6), and(v7), recycling(v8), advmod(v2,v1), det(v3,v0), amod(v3,v2), nsubj(v4,v3), prep(v4,v5), punct(v4,v9), pobj(v5,v6), cc(v6,v7), conj(v6,v8)"
+    "common>0.7(v2), most>0.7(v1), audits>0.7(v3), The>0.7(v0), were>0.7(v4), about>0.7(v5), .>0.7(v9), waste>0.7(v6), and>0.7(v7), recycling>0.7(v8), advmod>0.7(v2,v1), det>0.7(v3,v0), amod>0.7(v3,v2), nsubj>0.7(v4,v3), prep>0.7(v4,v5), punct>0.7(v4,v9), pobj>0.7(v5,v6), cc>0.7(v6,v7), conj>0.7(v6,v8)"
   ],
   "goals": [
-    "audits(v3), waste(v6), Message-Topic(v3,v6)"
+    "audits>0.7(v3), waste>0.7(v6), Message-Topic>0.7(v3,v6)"
   ],
   "relations": [
     "acomp",
@@ -70,9 +70,6 @@
     "entity"
   ],
   "non_trainable_rules": [
-    "MATCH audits>0.55000436(a0), were>0.55245113(a1), about>0.55001676(a2), waste>0.55000204(a3), common>0.552524(a4), nsubj>0.5508275(a1,a0), prep>0.55096817(a1,a2), pobj>0.5508474(a2,a3), amod>0.55122095(a0,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
-    "MATCH audits>0.55907345(a0), were>0.5606868(a1), about>0.56069654(a2), waste>0.5591337(a3), and>0.5607239(a4), nsubj>0.5617313(a1,a0), prep>0.56177837(a1,a2), pobj>0.5616555(a2,a3), cc>0.56192595(a3,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
-    "MATCH audits>0.58113396(a0), were>0.58122635(a1), about>0.58121353(a2), waste>0.5811747(a3), .>0.5811994(a4), nsubj>0.5819416(a1,a0), prep>0.58204865(a1,a2), pobj>0.58206636(a2,a3), punct>0.5820129(a1,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ ",
-    "MATCH audits>0.56557155(a0), were>0.5668398(a1), about>0.566853(a2), waste>0.5656218(a3), nsubj>0.5677553(a1,a0), prep>0.5678771(a1,a2), pobj>0.56775403(a2,a3) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ "
+    "MATCH audits>0.58151203(a0), were>0.5812393(a1), about>0.58122104(a2), waste>0.58158344(a3), nsubj>0.5817947(a1,a0), prep>0.581717(a1,a2), pobj>0.58175373(a2,a3) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ "
   ]
 }

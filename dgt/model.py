@@ -29,14 +29,15 @@ class DGT:
             i = 0
             fw = ForwardInference(data=fact, knowledge=self._k, permutation_shift=i)
             end_graphs = fw.compute()
-            metric.set_threshold(0.7)
-            relations_metric.set_threshold(0.7)
             metric, relations_metric = pre_select_paths(goal, end_graphs, metric, relations_metric)
 
+            fw = ForwardInference(data=fact, knowledge=self._k, permutation_shift=i)
+            end_graphs = fw.compute()
+            metric.set_threshold(0.7)
+            relations_metric.set_threshold(0.7)
             finished_paths, metric, relations_metric = train_all_paths(metric, relations_metric, self._k,
                                                                        end_graphs, goal, i,
                                                                        0.6, epochs, step)
-            
             if finished_paths:
                 ### HERE YOU MUST UPDATE THE METRIC AS WELL!!
                 #    train_all_paths(metric, relations_metric, self._k, finished_paths, goal, i,
