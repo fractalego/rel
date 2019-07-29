@@ -1,9 +1,9 @@
 {
   "facts": [
-    "common>0.7(v2), most>0.7(v1), audits>0.7(v3), The>0.7(v0), were>0.7(v4), about>0.7(v5), .>0.7(v9), waste>0.7(v6), and>0.7(v7), recycling>0.7(v8), advmod>0.7(v2,v1), det>0.7(v3,v0), amod>0.7(v3,v2), nsubj>0.7(v4,v3), prep>0.7(v4,v5), punct>0.7(v4,v9), pobj>0.7(v5,v6), cc>0.7(v6,v7), conj>0.7(v6,v8)"
+    "common>0.7(v2), most>0.7(v1), audits>0.7(v3), The>0.7(v0), were>0.7(v4), about>0.7(v5), .>0.7(v9), waste>0.7(v6), and>0.7(v7), recycling>0.7(v8), advmod>0.9(v2,v1), det>0.9(v3,v0), amod>0.9(v3,v2), nsubj>0.9(v4,v3), prep>0.9(v4,v5), punct>0.9(v4,v9), pobj>0.9(v5,v6), cc>0.9(v6,v7), conj>0.9(v6,v8)"
   ],
   "goals": [
-    "audits>0.7(v3), waste>0.7(v6), Message-Topic>0.7(v3,v6)"
+    "audits>0.7(v3), waste>0.7(v6), Message-Topic>0.9(v3,v6)"
   ],
   "relations": [
     "acomp",
@@ -70,6 +70,6 @@
     "entity"
   ],
   "non_trainable_rules": [
-    "MATCH audits>0.56060445(a0), were>0.56066823(a1), about>0.56065017(a2), waste>0.56059647(a3), nsubj>0.5614574(a1,a0), prep>0.56150585(a1,a2), pobj>0.56166893(a2,a3) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ "
+    "MATCH audits>0.55514246(a0), were>0.55542797(a1), about>0.5552479(a2), waste>0.555118(a3), .>0.55516(a4), nsubj>0.5562821(a1,a0), prep>0.55623543(a1,a2), pobj>0.55629414(a2,a3), punct>0.5564484(a1,a4) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.9(a0,a3) RETURN __RESULT__ "
   ]
 }

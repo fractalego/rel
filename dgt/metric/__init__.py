@@ -46,6 +46,9 @@ class GloveMetric(MetricBase):
 
     def set_threshold(self, new_threshold, gradient=True):
         for key in self._vector_map.keys():
+            old_threshold = self._vector_map[key][1]
+            if old_threshold >= new_threshold:
+                continue
             threshold = torch.autograd.Variable(torch.Tensor(np.array([new_threshold])).to(device),
                                                 requires_grad=gradient)
             self._vector_map[key] = (self._vector_map[key][0], threshold)
