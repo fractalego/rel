@@ -70,6 +70,6 @@
     "entity"
   ],
   "non_trainable_rules": [
-    "MATCH audits>0.58151203(a0), were>0.5812393(a1), about>0.58122104(a2), waste>0.58158344(a3), nsubj>0.5817947(a1,a0), prep>0.581717(a1,a2), pobj>0.58175373(a2,a3) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ "
+    "MATCH audits>0.56060445(a0), were>0.56066823(a1), about>0.56065017(a2), waste>0.56059647(a3), nsubj>0.5614574(a1,a0), prep>0.56150585(a1,a2), pobj>0.56166893(a2,a3) CREATE entity>0.7(a0), entity>0.7(a3), Message-Topic>0.7(a0,a3) RETURN __RESULT__ "
   ]
 }

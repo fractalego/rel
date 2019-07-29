@@ -482,7 +482,9 @@ def train_all_paths(old_metric, old_relations_metric, k, paths, goal, permutatio
                     finished_paths.append(item)
                     old_metric = metric
                     old_relations_metric = relations_metric
-                    break
+                    #break
+                    print('Match index:', match_index)
+                    return finished_paths, old_metric, old_relations_metric
         except Exception as e:
             _logger.warning(str(e))
 
@@ -497,6 +499,7 @@ def pre_select_paths(goal, paths, metric, relations_metric):
                   node_matcher=VectorNodeMatcher(metric, relations_metric, gradient=False),
                   match_index=0)
 
+    reasonable_paths = []
     for path in paths:
         graph_list = create_graph_list(path[2], goal)
         graph_list.reverse()
@@ -508,13 +511,16 @@ def pre_select_paths(goal, paths, metric, relations_metric):
         except MatchException:
             continue
 
+        reasonable_paths.append(path)
         for k, v in substitutions[0].items():
             rules_metric_index = last_consequence_graph.vs.find(name=v)['vector']
+            rules_threshold = metric.get_threshold_from_index(rules_metric_index)
             goal_metric_index = goal_graph.vs.find(name=k)['vector']
             print(metric.get_most_similar_string_from_index(rules_metric_index),
                   metric.get_threshold_from_index(rules_metric_index))
             print(metric.get_most_similar_string_from_index(goal_metric_index),
                   metric.get_threshold_from_index(goal_metric_index))
-            metric.copy_index_to_index(goal_metric_index, rules_metric_index, gradient=True)
+            if metric.indices_dot_product(rules_metric_index, goal_metric_index) < rules_threshold:
+                metric.copy_index_to_index(goal_metric_index, rules_metric_index, gradient=False)
 
-    return metric, relations_metric
+    return metric, relations_metric, reasonable_paths

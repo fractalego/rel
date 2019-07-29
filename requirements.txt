@@ -1,4 +1,7 @@
 nltk
+numpy
 spacy==2.0.18
 parvusdb==0.0.27
-dgt
+torch==1.0.1.post2
+torchvision==0.2.1
+gensim==3.7.1
