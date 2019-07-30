@@ -44,14 +44,14 @@ class GloveMetric(MetricBase):
         self._vector_matching_threshold = threshold
         self.vector_size = word2vec_model.vector_size
 
-    def set_threshold(self, new_threshold, gradient=True):
-        for key in self._vector_map.keys():
-            old_threshold = self._vector_map[key][1]
-            if old_threshold >= new_threshold:
-                continue
-            threshold = torch.autograd.Variable(torch.Tensor(np.array([new_threshold])).to(device),
-                                                requires_grad=gradient)
-            self._vector_map[key] = (self._vector_map[key][0], threshold)
+
+    def set_threshold_for_index(self, index, new_threshold, gradient=True):
+        old_threshold = self._vector_map[index][1]
+        if old_threshold >= new_threshold:
+            return
+        threshold = torch.autograd.Variable(torch.Tensor(np.array([new_threshold])).to(device),
+                                            requires_grad=gradient)
+        self._vector_map[index] = (self._vector_map[index][0], threshold)
 
     def get_vector_index(self, text, gradient=True):
         self._last_index += 1

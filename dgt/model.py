@@ -31,8 +31,8 @@ class DGT:
             end_graphs = fw.compute()
             metric, relations_metric, reasonable_paths = pre_select_paths(goal, end_graphs, metric, relations_metric)
 
-            metric.set_threshold(0.7)
-            relations_metric.set_threshold(0.7)
+            if not reasonable_paths:
+                continue
             finished_paths, metric, relations_metric = train_all_paths(metric, relations_metric, self._k,
                                                                        reasonable_paths, goal, i,
                                                                        0.6, epochs, step)
@@ -41,7 +41,6 @@ class DGT:
                 #    train_all_paths(metric, relations_metric, self._k, finished_paths, goal, i,
                 #                    1, 3, step)
                 shifts_and_finished_paths.append((i, finished_paths, goal))
-                break
 
         print('Relaxing.')
         for _ in range(relaxation_epochs):

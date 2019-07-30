@@ -460,6 +460,7 @@ def train_all_paths(old_metric, old_relations_metric, k, paths, goal, permutatio
     for item in paths:
         try:
             for match_index in range(10):
+                print('Match index:', match_index)
                 metric = copy.deepcopy(old_metric)
                 relations_metric = copy.deepcopy(old_relations_metric)
 
@@ -494,6 +495,16 @@ def train_all_paths(old_metric, old_relations_metric, k, paths, goal, permutatio
     return None
 
 
+def assign_threshold_to_vectors_in_graph(graph_str, metric, relations_metric):
+    graph = create_graph_from_string(str(graph_str))
+    for vertex in graph.vs:
+        index = vertex['vector']
+        metric.set_threshold_for_index(index, 0.7)
+    for edge in graph.es:
+        index = edge['rvector']
+        relations_metric.set_threshold_for_index(index, 0.9)
+        
+
 def pre_select_paths(goal, paths, metric, relations_metric):
     match = Match(matching_code_container=DummyCodeContainer(),
                   node_matcher=VectorNodeMatcher(metric, relations_metric, gradient=False),
@@ -523,4 +534,8 @@ def pre_select_paths(goal, paths, metric, relations_metric):
             if metric.indices_dot_product(rules_metric_index, goal_metric_index) < rules_threshold:
                 metric.copy_index_to_index(goal_metric_index, rules_metric_index, gradient=False)
 
+        for graph in graph_list:
+            assign_threshold_to_vectors_in_graph(graph, metric, relations_metric)
+
+                
     return metric, relations_metric, reasonable_paths
