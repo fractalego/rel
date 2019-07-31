@@ -9,7 +9,7 @@ Time:
 * 1 goal/data graph, 1 rule (the right one): 30sec
 * 1 goal/data graph, 10 rules (with 4 right ones): ~20min
 * 1 goal/data graph, 10 rules (with 4 right ones), manual (#) pre-selection: 115sec
-
+* 100 ", many rules: ~11000 sec, recall 0.2 in train set (0.7 threshold)
 
 Steps:
 1) create all the paths with all the rules (where * is an all-match)

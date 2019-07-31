@@ -1,5 +1,6 @@
 import json
 import random
+import logging
 
 from dgt.graph import GraphRule
 from dgt.inference import ForwardInference
@@ -7,6 +8,8 @@ from dgt.utils import get_relations_embeddings_dict_from_json, get_data_goal_kno
     print_predicates, get_string_with_all_the_rules_with_weights, pre_select_paths
 
 from rel_extract.writer import Writer
+
+_logger = logging.getLogger(__file__)
 
 
 class DGT:
@@ -33,9 +36,14 @@ class DGT:
 
             if not reasonable_paths:
                 continue
-            finished_paths, metric, relations_metric = train_all_paths(metric, relations_metric, self._k,
-                                                                       reasonable_paths, goal, i,
-                                                                       0.6, epochs, step)
+            try:
+                finished_paths, metric, relations_metric = train_all_paths(metric, relations_metric, self._k,
+                                                                           reasonable_paths, goal, i,
+                                                                           0.6, epochs, step)
+            except TypeError:
+                _logger.warning('Exception while training paths')
+                continue
+            
             if finished_paths:
                 ### HERE YOU MUST UPDATE THE METRIC AS WELL!!
                 #    train_all_paths(metric, relations_metric, self._k, finished_paths, goal, i,
