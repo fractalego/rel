@@ -12,7 +12,7 @@ _path = os.path.dirname(__file__)
 _gradient_test_filename = os.path.join(_path, '../data/training_small100.json')
 
 _metric = get_metric_or_save_pickle(_path, '../data/glove.txt', '../data/metric.pickle')
-_metric._vector_matching_threshold = .7  ### THIS IS BECAUSE 0.6 is too low! Words are matched without making sense
+#_metric._vector_matching_threshold = .7  ### THIS IS BECAUSE 0.6 is too low! Words are matched without making sense
 
 set_global_device('cpu')
 

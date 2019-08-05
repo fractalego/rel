@@ -6,7 +6,7 @@ from dgt.auxiliary.misc import get_metric_or_save_pickle
 from dgt.graph.graph_matcher import GraphMatcher
 
 _path = os.path.dirname(__file__)
-_test_filename = os.path.join(_path, '../data/saved_100.json')
+_test_filename = os.path.join(_path, '../data/saved.json')
 
 _metric = get_metric_or_save_pickle(_path, '../data/glove.txt', '../data/metric.pickle')
 

@@ -9,7 +9,10 @@ Time:
 * 1 goal/data graph, 1 rule (the right one): 30sec
 * 1 goal/data graph, 10 rules (with 4 right ones): ~20min
 * 1 goal/data graph, 10 rules (with 4 right ones), manual (#) pre-selection: 115sec
-* 100 ", many rules: ~11000 sec, recall 0.2 in train set (0.7 threshold)
+* 100 ", many rules: ~11000 sec, recall 0.2 in train set (0.7 threshold). 30 items. 37 rules are learned
+* 100 ", many rules: ~22000 sec, recall 0.08 in train set (0.7 threshold). 50 items. 37 rules are learned
+* 100 ", many rules: ~12000 sec, recall 0.03 in train set (0.7 threshold). 15 items. 37 rules are learned
+* 100 ", many rules: ~20000 sec, recall 0.12 in train set (0.7 threshold). adaptive items. 37 rules are learned
 
 Steps:
 1) create all the paths with all the rules (where * is an all-match)

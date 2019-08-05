@@ -23,7 +23,7 @@ _logger = logging.getLogger(__file__)
 _path = os.path.dirname(__file__)
 
 _small = 1e-15
-_max_items_size = 30
+_max_items_size = 5
 
 
 def get_data_goal_knowledge_from_json(json_item, metric, relations_metric):
@@ -358,12 +358,28 @@ def create_scattering_sequence(pre_match, post_match, post_thresholds, substitut
     return scattering_sequence
 
 
+def get_max_path_items_size(inference_list, goal):
+    max_size = 0
+    for item in inference_list:
+        if type(item) is GraphRule:
+            max_size = max(max_size, len(item.get_hypothesis()._g.vs))
+            max_size = max(max_size, len(item.get_hypothesis()._g.es))
+        elif type(item) is Graph:
+            max_size = max(max_size, len(item._g.vs))
+            max_size = max(max_size, len(item._g.es))
+    return max_size + 1
+
+
 def train_a_single_path(path, goal, metric, relations_metric, match_factory, optimizer, epochs,
                         permutation_shift, clamp):
+    global _max_items_size
+    _max_items_size = get_max_path_items_size(path[2], goal)
+    print(_max_items_size)
+    
     for i in range(epochs):
         graph_list = create_graph_list(path[2], goal)
         rule_matrices, relations_rule_matrices = create_all_rule_matrices(path[2])
-
+        
         # Skip training for paths that do not have a differentiable rule
         has_gradient_rule = False
         for it in path[2]:
@@ -487,6 +503,7 @@ def train_all_paths(old_metric, old_relations_metric, k, paths, goal, permutatio
                     print('Match index:', match_index)
                     return finished_paths, old_metric, old_relations_metric
         except Exception as e:
+            # raise e
             _logger.warning(str(e))
 
     if finished_paths:
